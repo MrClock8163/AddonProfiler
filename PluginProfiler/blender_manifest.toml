@@ -1,0 +1,15 @@
+schema_version = "1.0.0"
+
+maintainer = "MrClock"
+type = "add-on"
+id = "PluginProfiler"
+name = "Plugin Profiler"
+tagline = "Monitor and capture add-on profiling data"
+version = "2.0.0-dev"
+blender_version_min = "4.2.0"
+website = "https://github.com/MrClock8163/PluginProfiler"
+tags = ["Development"]
+license = ["SPDX:GPL-3.0-or-later"]
+
+[permissions]
+files = "Save and process benchmark and profile data"
