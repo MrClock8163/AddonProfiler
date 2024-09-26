@@ -60,11 +60,14 @@ class Profiler:
     def logger_return(self, frame, arg):
         file, name, key = self.logger_names(frame.f_code)
 
-        if key not in self.callstack:
+        start = self.callstack.pop(key, None)
+        if start is None:
             return
         
         log = ""
-        start = self.callstack.pop(key)
+        duration = (datetime.now() - start).total_seconds()
+        if duration <= self.settings.filter_time_threshold and self.settings.filter_time_enable:
+            return
         
         if 'NAME' in self.settings.logger_details:
             log += name
@@ -76,7 +79,7 @@ class Profiler:
             log += " at %s" % start
 
         if 'TIME' in self.settings.logger_details:
-            log += " in %0.9fs" % (datetime.now() - start).total_seconds()
+            log += " in %0.9fs" % duration
 
         print(log)
 

@@ -67,6 +67,18 @@ class APROF_PG_logging(bpy.types.PropertyGroup):
         ),
         default='WHITELIST'
     )
+    filter_time_enable: bpy.props.BoolProperty(
+        name="Filter Time",
+        description="Hide items under an execution time threshold"
+    )
+    filter_time_threshold: bpy.props.FloatProperty(
+        name="Threshold",
+        description="Filter cutoff threshold",
+        min=0,
+        soft_max=60,
+        precision=6,
+        step=0.0001
+    )
 
 
 classes = (

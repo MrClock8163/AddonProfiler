@@ -235,6 +235,12 @@ class APROF_PT_logging_settings(bpy.types.Panel):
         row.prop(props, "logger_details", expand=True)
         layout.prop(props, "filter_module")
 
+        layout.label(text="Time Threshold:")
+        col_time = layout.column(align=True)
+        col_time.prop(props, "filter_time_enable", toggle=True)
+        if props.filter_time_enable:
+            col_time.prop(props, "filter_time_threshold")
+
         layout.label(text="Exclude:")
         row_filters = layout.row(align=True)
         row_filters.prop(props, "filter_comp", text="Comprehension", toggle=True)

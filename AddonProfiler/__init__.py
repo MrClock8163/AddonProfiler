@@ -3,7 +3,7 @@ bl_info = {
     "author" : "MrClock, bd3d (originally), rubenmesserschmidt (initial fixes)",
     "description" : "Monitor and capture add-on profiling data",
     "blender" : (2, 90, 0),
-    "version" : (2, 0, 0),
+    "version" : (2, 1, 0, "dev"),
     "wiki_url" : "",
     "tracker_url" : "https://github.com/MrClock8163/AddonProfiler/issues",
     "category" : "Development",
