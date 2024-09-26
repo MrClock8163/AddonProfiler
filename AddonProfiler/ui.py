@@ -106,7 +106,7 @@ class APROF_OT_profiling_start(bpy.types.Operator):
 
     @classmethod
     def poll(cls, context):
-        return not prof.is_running()
+        return not prof.is_running() and getprofile() is None
     
     def execute(self, context):
         prof.enable()
