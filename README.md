@@ -1,4 +1,4 @@
-# Plugin Profiler
+# Add-on Profiler
 
 >[!NOTE]
 >This project is a reimplementation of the original [Plugin-Profiler](https://github.com/DB3D/Plugin-Profiler) add-on created by [DB3D](https://github.com/DB3D) and improved by [rubenmesserschmidt](https://github.com/rubenmesserschmidt) ([Plugin-Profiler](https://github.com/rubenmesserschmidt/Plugin-Profiler)).
@@ -7,11 +7,11 @@
 
 ## About
 
-Plugin Profiler is a Python utility add-on for [Blender](https://www.blender.org/), providing a convenient and in-software solution to monitor code execution and capture profiling data when needed during add-on development.
+Add-on Profiler is a Python utility add-on for [Blender](https://www.blender.org/), providing a convenient and in-software solution to monitor code execution and capture profiling data when needed during add-on development.
 
 ## Usage
 
-The two main features of the add-on are execution logging and profiling. The tools can be found on the `Plugin Profiler` tabs of the 3D viewport sidebar.
+The two main features of the add-on are execution logging and profiling. The tools can be found on the `Add-on Profiler` tabs of the 3D viewport sidebar.
 
 ![Tool panels](/images/img_tool_panels.png)
 

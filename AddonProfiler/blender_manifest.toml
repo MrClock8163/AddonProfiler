@@ -2,12 +2,12 @@ schema_version = "1.0.0"
 
 maintainer = "MrClock"
 type = "add-on"
-id = "PluginProfiler"
-name = "Plugin Profiler"
+id = "AddonProfiler"
+name = "Add-on Profiler"
 tagline = "Monitor and capture add-on profiling data"
 version = "2.0.0"
 blender_version_min = "4.2.0"
-website = "https://github.com/MrClock8163/PluginProfiler"
+website = "https://github.com/MrClock8163/AddonProfiler"
 tags = ["Development"]
 license = ["SPDX:GPL-3.0-or-later"]
 

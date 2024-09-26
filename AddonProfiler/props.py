@@ -1,14 +1,14 @@
 import bpy
 
 
-class PPROF_PG_logging_filteritem(bpy.types.PropertyGroup):
+class APROF_PG_logging_filteritem(bpy.types.PropertyGroup):
     name: bpy.props.StringProperty(
         name="Name",
         description="Value to filter"
     )
 
 
-class PPROF_PG_logging(bpy.types.PropertyGroup):
+class APROF_PG_logging(bpy.types.PropertyGroup):
     logger_details: bpy.props.EnumProperty(
         name="Details",
         description="Call details to log",
@@ -40,7 +40,7 @@ class PPROF_PG_logging(bpy.types.PropertyGroup):
     filter_file: bpy.props.CollectionProperty(
         name="Filter Files",
         description="File paths to filter",
-        type=PPROF_PG_logging_filteritem
+        type=APROF_PG_logging_filteritem
     )
     filter_file_index: bpy.props.IntProperty(name="Active Filter Index", description="Double click to change name and value")
     filter_file_type: bpy.props.EnumProperty(
@@ -55,7 +55,7 @@ class PPROF_PG_logging(bpy.types.PropertyGroup):
     filter_func: bpy.props.CollectionProperty(
         name="Filter Functions",
         description="Function names to filter",
-        type=PPROF_PG_logging_filteritem
+        type=APROF_PG_logging_filteritem
     )
     filter_func_index: bpy.props.IntProperty(name="Active Filter Index", description="Double click to change name and value")
     filter_func_type: bpy.props.EnumProperty(
@@ -70,8 +70,8 @@ class PPROF_PG_logging(bpy.types.PropertyGroup):
 
 
 classes = (
-    PPROF_PG_logging_filteritem,
-    PPROF_PG_logging
+    APROF_PG_logging_filteritem,
+    APROF_PG_logging
 )
 
 
@@ -79,11 +79,11 @@ def register():
     for cls in classes:
         bpy.utils.register_class(cls)
     
-    bpy.types.WindowManager.pprof_logging = bpy.props.PointerProperty(type=PPROF_PG_logging)
+    bpy.types.WindowManager.aprof_logging = bpy.props.PointerProperty(type=APROF_PG_logging)
 
 
 def unregister():
-    del bpy.types.WindowManager.pprof_logging
+    del bpy.types.WindowManager.aprof_logging
 
     for cls in reversed(classes):
         bpy.utils.unregister_class(cls)
