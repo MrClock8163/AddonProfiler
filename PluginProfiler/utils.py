@@ -48,11 +48,11 @@ class Profiler:
             return
         
         for item in self.settings.filter_file:
-            if (item.name in file) == self.settings.filter_file_exclude:
+            if (item.name in file) == (self.settings.filter_file_type == 'BLACKLIST'):
                 return
         
         for item in self.settings.filter_func:
-            if (item.name == name) == self.settings.filter_func_exclude:
+            if (item.name == name) == (self.settings.filter_func_type == 'BLACKLIST'):
                 return
         
         self.callstack[key] = datetime.now()

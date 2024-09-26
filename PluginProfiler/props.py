@@ -43,9 +43,14 @@ class PPROF_PG_logging(bpy.types.PropertyGroup):
         type=PPROF_PG_logging_filteritem
     )
     filter_file_index: bpy.props.IntProperty(name="Active Filter Index", description="Double click to change name and value")
-    filter_file_exclude: bpy.props.BoolProperty(
-        name="Exclude Filtered Files",
-        description="Hide the items matching the filters instead of only showing them"
+    filter_file_type: bpy.props.EnumProperty(
+        name="Filter Type",
+        description="Filter with whitelisting or blacklisting",
+        items=(
+            ('WHITELIST', "Show Only", "Show items only if they match the filter"),
+            ('BLACKLIST', "Hide", "Hide items if they match the filters")
+        ),
+        default='WHITELIST'
     )
     filter_func: bpy.props.CollectionProperty(
         name="Filter Functions",
@@ -53,9 +58,14 @@ class PPROF_PG_logging(bpy.types.PropertyGroup):
         type=PPROF_PG_logging_filteritem
     )
     filter_func_index: bpy.props.IntProperty(name="Active Filter Index", description="Double click to change name and value")
-    filter_func_exclude: bpy.props.BoolProperty(
-        name="Exclude Filtered Functions",
-        description="Hide the items matching the filters instead of only showing them"
+    filter_func_type: bpy.props.EnumProperty(
+        name="Filter Type",
+        description="Filter with whitelisting or blacklisting",
+        items=(
+            ('WHITELIST', "Show Only", "Show items only if they match the filter"),
+            ('BLACKLIST', "Hide", "Hide items if they match the filters")
+        ),
+        default='WHITELIST'
     )
 
 

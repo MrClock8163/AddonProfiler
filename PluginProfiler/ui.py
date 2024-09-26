@@ -244,7 +244,8 @@ class PPROF_PT_logging_settings(bpy.types.Panel):
         row_file = layout.row()
         col_list_file = row_file.column()
         col_list_file.template_list("PPROF_UL_filter", "PPROF_filter_file", props, "filter_file", props, "filter_file_index")
-        col_list_file.prop(props, "filter_file_exclude", text="Exclude", toggle=True)
+        row_type_file = col_list_file.row(align=True)
+        row_type_file.prop(props, "filter_file_type", expand=True)
         col_op_file = row_file.column(align=True)
         op_add_file = col_op_file.operator("pprof.logging_filter_add", text="", icon='ADD')
         op_add_file.prop = "filter_file"
@@ -255,7 +256,8 @@ class PPROF_PT_logging_settings(bpy.types.Panel):
         row_func = layout.row()
         col_list_func = row_func.column()
         col_list_func.template_list("PPROF_UL_filter", "PPROF_filter_func", props, "filter_func", props, "filter_func_index")
-        col_list_func.prop(props, "filter_func_exclude", text="Exclude", toggle=True)
+        row_type_func = col_list_func.row(align=True)
+        row_type_func.prop(props, "filter_func_type", expand=True)
         col_op_func = row_func.column(align=True)
         op_add_func = col_op_func.operator("pprof.logging_filter_add", text="", icon='ADD')
         op_add_func.prop = "filter_func"
